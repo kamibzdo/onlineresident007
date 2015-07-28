@@ -1,0 +1,104 @@
+<!--<table class="table table-hover">-->
+<!--<tr>-->
+
+<!--<th>#</th>-->
+<!--<th>name</th>-->
+<!--<th>description</th>-->
+<!--<th>edit</th>-->
+<!--<th>delete</th>-->
+<!--<th>delete</th>-->
+<!--<th>delete</th>-->
+
+<!--&lt;!&ndash;list of table&ndash;&gt;-->
+<!--</tr>-->
+<!--<tr ng-repeat="people in users">-->
+<!--<td>{{$index+1}}</td>-->
+<!--<td>{{people.name}}</td>-->
+<!--<td>{{people.description}}</td>-->
+<!--<td>{{people.email}}</td>-->
+<!--<td>{{people.lastname}}</td>-->
+<!--<td><a ng-href="#/editProduct/{{people.id}}"> <span class="glyphicon glyphicon-edit"-->
+<!--aria-hidden="true"></span></a></td>-->
+<!--<td><a ng-href="#/listProduct"><span class="glyphicon glyphicon-remove-circle" aria-hidden="true"-->
+<!--ng-click="deletePeople(people.id)"></span></a></td>-->
+<!--</tr>-->
+<!--<tr>-->
+<!--<th></th>-->
+<!--<th><strong translate>listProduct.total</strong></th>-->
+<!--<th></th>-->
+<!--<th class="text-right">{{totalNetPrice | number}}</th>-->
+
+
+<!--</tr>-->
+<!--</table>-->
+<div class="row-fluid">
+
+    <h1>Add new User</h1>
+
+    <div class="col-md-4">
+        <form name="editform" novalidate flow-init>
+            <div class="form-group">
+                <!-- Sidebar content-->
+                <label for="username">Username :</label>
+                <input ng-model="user.username" class="form-control" id="username" name="username"
+                       placeholder="Username" required/>
+
+                <div class="alert alert-danger" role="alert" ng-show="editform.username.$error.required">
+                    <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+                    <span class="sr-only">Error:</span>
+                    Username is Required!
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="password">Password :</label>
+                <input ng-model="user.password" class="form-control" id="password"
+                       placeholder="Password" name="password" required/>
+
+                <div class="alert alert-danger" role="alert" ng-show="editform.password.$error.required">
+                    <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+                    <span class="sr-only">Error:</span>
+                    Password is Required!
+                </div>
+
+            </div>
+            <div class="form-group">
+                <label for="name">Name :</label>
+                <input ng-model="user.name" name="name" class="form-control" id="name"
+                       placeholder="Name" required/>
+
+                <div class="alert alert-danger" role="alert" ng-show="editform.name.$error.required">
+                    <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+                    <span class="sr-only">Error:</span>
+                    Name is Required!
+                </div>
+            </div>
+
+            <div class="form-group">
+                <!-- Sidebar content-->
+                <label for="email">Email :</label>
+                <input ng-model="user.email" class="form-control" id="email" name="email"
+                       placeholder="Email" required/>
+
+                <div class="alert alert-danger" role="alert" ng-show="editform.email.$error.required">
+                    <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+                    <span class="sr-only">Error:</span>
+                    Email is Required!
+                </div>
+            </div>
+
+            <label>
+                <input type="radio" ng-model="user.roles" value="admin" name="admin">
+                Admin
+            </label><br/>
+
+            <label>
+                <input type="radio" ng-model="user.roles" value="user" name="user">
+                User
+            </label><br/>
+
+
+            <button type="submit" class="btn btn-default" ng-click="addUser()">Register!!</button>
+
+        </form>
+    </div>
+</div>

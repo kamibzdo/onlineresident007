@@ -1,0 +1,21 @@
+
+<div class="sidebar-nav">
+    <ul class="nav nav-list">
+        <li class="nav-header">Lab SE31 Menu bar</li>
+    	<li ng-class="{true: 'active'}[menuActive('/addProduct')]">
+        	<a href="#/addProduct">Add Product</a>
+    	</li>
+    	<li ng-class="{true: 'active'}[menuActive('/listProduct')]">
+        	<a href="#/listProduct">All products</a>
+    	</li>
+        <li ng-class="{true: 'active'}[menuActive('/register')]">
+            <a href="#/register">Register</a>
+        </li>
+        <li ng-class="{true: 'active'}[menuActive('/shoppingCart')]" ng-show="hasRole('user')">
+            <a href="#/shoppingCart">Shopping Cart</a>
+        </li>
+        <li ng-class="{true: 'active'}[menuActive('/shoppingCart')]" ng-show="hasRole('user')">
+            <a href="#/historyCart">History Cart</a>
+        </li>
+    </ul>
+</div><!--/.well -->
